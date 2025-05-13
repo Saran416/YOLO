@@ -8,7 +8,7 @@ This repository contains a complete **YOLOv1 (You Only Look Once)** object detec
 
 ---
 
-## 📸 Sample Predictions (Trained for 50 Epochs on ResNet50)
+## Sample Predictions (Trained for 50 Epochs on ResNet50)
 
 <table>
   <tr>
@@ -27,13 +27,13 @@ This repository contains a complete **YOLOv1 (You Only Look Once)** object detec
 
 ---
 
-## 📚 Abstract
+## Abstract
 
 Object detection is a cornerstone of computer vision, with YOLO standing out for its **real-time performance**. In this project, I implement **YOLOv1** from scratch in PyTorch to understand its core mechanics and architecture. The model uses **ResNet50** as a backbone and incorporates a **custom YOLO loss function**, processing the **PASCAL VOC 2005** dataset for training and evaluation.
 
 ---
 
-## 🔧 Requirements
+## Requirements
 
 Install dependencies with:
 
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🗂 Dataset
+## Dataset
 
 - **PASCAL VOC 2005 Dataset**:
   [Download here](http://host.robots.ox.ac.uk/pascal/VOC/voc2005/index.html)
@@ -57,15 +57,15 @@ pip install -r requirements.txt
 
 ---
 
-## 🧠 Model Architecture
+## Model Architecture
 
-### 🔹 Base Network
+### Base Network
 
 - **ResNet50** pretrained on ImageNet is used as the feature extractor.
 - Fully connected layers are removed.
 - Parameters are **frozen** during training to leverage transfer learning.
 
-### 🔹 YOLO Head
+### YOLO Head
 
 - Custom convolutional layers are added on top of the ResNet backbone.
 - Final output is reshaped to predict:
@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔎 Data Processing Pipeline
+## Data Processing Pipeline
 
 - **Images** resized to **224×224**.
 - **Annotations** are parsed from `.txt` files using a custom `preprocess_txt` function.
@@ -86,7 +86,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🧮 Loss Function
+## Loss Function
 
 A **custom loss function** is implemented following the YOLOv1 paper, combining four components:
 
@@ -95,7 +95,7 @@ A **custom loss function** is implemented following the YOLOv1 paper, combining 
 - **Confidence Loss (No Object)**: Penalizes false positives.
 - **Classification Loss**: Ensures correct class prediction.
 
-<!-- ### 📐 YOLO Loss Formula -->
+<!-- ### YOLO Loss Formula -->
 
 <!-- $$
 \begin{align}
@@ -108,7 +108,7 @@ $$ -->
 
 ---
 
-## 🏋️‍♂️ Training Details
+## Training Details
 
 - **Backbone**: ResNet50 (pretrained)
 - **Epochs**: 50
@@ -120,21 +120,21 @@ $$ -->
 
 ---
 
-## 📊 Evaluation
+## Evaluation
 
-### 🔸 Metric Used: **IoU (Intersection over Union)**
+### Metric Used: **IoU (Intersection over Union)**
 
 $$
 IoU = \frac{\text{Area of Overlap}}{\text{Area of Union}}
 $$
 
-### 🔸 Results
+### Results
 
 - **Overall IoU**: **58%**
 - **Best performance**: Motorbike, Bicycle
 - **Worst performance**: Car (due to limited samples in dataset)
 
-## 📖 References
+## References
 
 - [YOLOv1 Research Paper (CVPR 2016)](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Redmon_You_Only_Look_CVPR_2016_paper.pdf)
 - [PASCAL VOC 2005 Dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2005/index.html)
