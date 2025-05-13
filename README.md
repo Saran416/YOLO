@@ -95,16 +95,16 @@ A **custom loss function** is implemented following the YOLOv1 paper, combining 
 - **Confidence Loss (No Object)**: Penalizes false positives.
 - **Classification Loss**: Ensures correct class prediction.
 
-### 📐 YOLO Loss Formula
+<!-- ### 📐 YOLO Loss Formula -->
 
-$$
+<!-- $$
 \begin{align}
 \mathcal{L} &= \lambda_{\text{coord}} \sum_{i=0}^{S^2} \mathbb{1}_{i}^{obj} \left( (x_i - \hat{x_i})^2 + (y_i - \hat{y_i})^2 + (\sqrt{w_i} - \sqrt{\hat{w_i}})^2 + (\sqrt{h_i} - \sqrt{\hat{h_i}})^2 \right) \\
 &+ \sum_{i=0}^{S^2} \mathbb{1}_{i}^{obj} (C_i - \hat{C_i})^2 \\
 &+ \lambda_{\text{noobj}} \sum_{i=0}^{S^2} \mathbb{1}_{i}^{noobj} (C_i - \hat{C_i})^2 \\
 &+ \sum_{i=0}^{S^2} \mathbb{1}_{i}^{obj} (P_i - \hat{P_i})^2
 \end{align}
-$$
+$$ -->
 
 ---
 
